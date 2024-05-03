@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+<style>
+body{background: url(img/screen-bg.jpg) no-repeat top center; background-size: cover;}
+
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+.lottie-animation-container {
+    background-color: var(--lottie-animation-container-background-color);
+    height: var(--lottie-animation-container-height);
+    margin: var(--lottie-animation-margin);
+    overflow: hidden;
+    width: var(--lottie-animation-container-width);
+}
+
+.contact {
+  transition: 0.3s;
+  right: -94px;
+  position: fixed;
+  top:calc(50% - 29px);
+}
+.contact:hover {
+  transform: translate(-94px, 0px);
+}
+.chat {
+  transition: 0.2s;
+  right: -47px;
+  position: fixed;
+  top:calc(50% + 29px);
+}
+.chat:hover {
+  transform: translate(-47px, 0px);
+}
+</style>
+
+
+<body>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Chat Button options </button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="index.html">Option 1</a>
+          <a href="option-02.html">Option 2</a>
+          <a href="option-03.html">Option 3</a>
+          <a href="option-04.html">Option 4</a>
+          <a href="option-05.html">Option 4</a>
+        </div>
+      </div>
+      <a href="#" class="contact"><img src="img/option-02-01.png"></a>
+      <a href="#" class="chat"><img src="img/option-02-02.png"></a>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script id="rendered-js" >
+    (function () {
+    
+    
+      $('.chat-btn-01-popup').on('click', function (e) {
+    
+               $(this).addClass('bounce-out');
+               $(this).removeClass('bounce-in');
+      });
+    
+    })();
+  /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+        </script>
+</html>
